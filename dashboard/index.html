@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Token Radar · pre-token protocols ranked by implied value</title>
+<link rel="stylesheet" href="app.css">
+</head>
+<body>
+<header class="top">
+  <div class="brand"><span class="scope" aria-hidden="true"></span><b>Token Radar</b><span class="ver" id="ver"></span></div>
+  <p class="src" id="src"></p>
+</header>
+<section class="kpis" id="kpis" aria-label="Board summary"></section>
+<nav class="bar" aria-label="Board controls">
+  <div class="tabs" role="tablist" id="tabs">
+    <button role="tab" data-tab="board">Pre-token board</button>
+    <button role="tab" data-tab="live">Token trades</button>
+    <button role="tab" data-tab="model">Model</button>
+  </div>
+  <label class="f grow">Search<input id="q" type="search" placeholder="name, slug, category or chain" autocomplete="off"></label>
+  <label class="f">Category<select id="cat"></select></label>
+  <label class="f">Chain<select id="chain"></select></label>
+  <label class="f">Set<select id="set">
+    <option value="all">All rows</option>
+    <option value="watch">Watchlist</option>
+    <option value="early">Below floor</option>
+  </select></label>
+  <label class="f">Min TVL<select id="min">
+    <option value="0">Any</option>
+    <option value="10000000">$10M</option>
+    <option value="25000000">$25M</option>
+    <option value="100000000">$100M</option>
+    <option value="500000000">$500M</option>
+  </select></label>
+  <button class="reset" id="reset" type="button">Reset</button>
+</nav>
+<main class="grid" id="main">
+  <section class="pane" id="list" aria-live="polite"></section>
+  <aside class="pane detail" id="detail" aria-label="Protocol detail"></aside>
+</main>
+<footer class="foot" id="foot"></footer>
+<script src="../data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
